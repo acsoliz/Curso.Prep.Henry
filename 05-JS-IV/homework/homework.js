@@ -12,7 +12,7 @@ function crearGato(nombre, edad) {
     meow: function(){
       return 'Meow!';
     }
-  };
+  }
   return nuevoObjeto;
 }
 
@@ -48,7 +48,6 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // Devuelve el objeto
   // Tu código:
   delete objeto[unaPropiedad];
-
   return objeto;
 }
 
@@ -122,7 +121,7 @@ function pasarUsuarioAPremium(usuarios) {
   // Devuelve el array de usuarios
   // Tu código:
   for (var i = 0; i < usuarios.length; i++){
-    usuarios[i].esPremiun = true;
+    usuarios[i].esPremium = true;
   }
 
   return usuarios;
