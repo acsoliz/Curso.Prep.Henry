@@ -70,6 +70,7 @@ function fizzBuzz(numero) {
 }
 
 function operadoresLogicos(num1, num2, num3) {
+	// 3, -2, 20
 	//
 	//La función recibe tres números distintos.
 	//Si num1 es mayor a num2 y a num3 y además es positivo, retornar ---> "Número 1 es mayor y positivo"
@@ -78,22 +79,23 @@ function operadoresLogicos(num1, num2, num3) {
 	//0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
 	//Si no se cumplen ninguna de las condiciones anteriores, retornar false.
 
-	if (num3 === 0 || num2 === 0 || num1 === 0) {
-		return 'Error';
-	}
 	if (num1 < 0 || num2 < 0 || num3 < 0) {
 		return 'Hay negativos';
 	}
+	if (num1 === 0 || num2 === 0 || num3 === 0) {
+		return 'Error';
+	}
+	if (num1 > num2 && num1 > num3) {
+		return 'Número 1 es mayor y positivo';
+	}
 	if (num3 > num1 && num3 > num2) {
 		return num3 + 1;
-	}
-	if (num1 > num2 && num1 > num3 && num1 > 0) {
-		return 'Número 1 es mayor y positivo';
 	}
 	return false;
 }
 
 function esPrimo(numero) {
+	//5
 	// 4 => false
 	// Devuelve "true" si "numero" es primo
 	// De lo contrario devuelve "falso"
@@ -101,46 +103,49 @@ function esPrimo(numero) {
 	// Pista 2: Puedes resolverlo usando un bucle `for`
 	// Nota: Los números 0 y 1 NO son considerados números primos
 
-	if (numero <= 1) return false;
-
-	for (let i = 2; i < numero; i++) {
+	if (numero <= 1) {
+		return false;
+	}
+	for (var i = 2; i < numero; i++) {
+		// 4
 		if (numero % i === 0) {
 			return false;
 		}
 	}
 	return true;
+	// i = i + 1
+	// i++
 }
 
 function esVerdadero(valor) {
-	//Escribe una función que reciba un valor booleano y retorne “Soy verdadero”
+	// true     false
+	//Escribe una función que reciba un valor booleano y retorne  “Soy verdadero”
 	//si su valor es true y “Soy falso” si su valor es false.
 	//Escribe tu código aquí
 	if (valor) {
 		return 'Soy verdadero';
-	} else {
-		return 'Soy falso';
 	}
+	return 'Soy falso';
 }
 
 function tablaDelSeis() {
 	//Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
 	//La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
 	//Escribe tu código aquí
-	var array = []; // [1, 0,6, 12, ..60.. ....60, ]
-	var aux = 0;
-	for (let i = 0; i <= 10; i++) {
-		aux = i * 6;
-		array.push(aux); //[1,2,4, 5].push(6) => [1,2,4, 5, 6]
+	var tablaDelseis = [];
+
+	for (var i = 0; i <= 10; i++) {
+		var variable = 6 * i;
+		tablaDelseis.push(variable);
 	}
-	return array;
+	return tablaDelseis;
 }
 
 function tieneTresDigitos(numero) {
 	//Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
 	//Escribe tu código aquí
-	var string = numero.toString();
-
-	if (string.length === 3) {
+	var soyString = numero.toString(); // 98 '98'
+	if (soyString.length === 3) {
 		return true;
 	}
 	return false;
@@ -150,11 +155,14 @@ function doWhile(numero) {
 	//Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
 	//Retornar el valor final.
 	//Usar el bucle do ... while.
-	var suma = numero;  // 45
-  var i = 0
-	do {                      // x5
-		suma = suma + 5; // 25
-		i++; // 4
+
+	var i = 0;
+	var suma = numero;
+	do {
+		suma += 5;
+		//suma = suma + 5
+		
+		i++;
 	} while (i < 8);
 	return suma;
 }
